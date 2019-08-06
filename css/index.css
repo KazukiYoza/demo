@@ -1,5 +1,9 @@
-body {
-  font-family: sans-serif;
+h1, p {
+  font-family: 'Noto Sans JP','Oswald', sans-serif;
+}
+
+li {
+  font-family: 'Oswald', sans-serif;
 }
 
 .grid {
@@ -62,7 +66,6 @@ body {
   position: fixed;
   top: -60px;
   z-index: 4;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .header-container .header-menu ul {
@@ -118,7 +121,6 @@ body {
 .header-container .header-title {
   right: 0%;
   z-index: 4;
-  font-family: 'MS Gothic';
   background-color: rgba(0, 0, 0, 0);
   color: white;
 }

@@ -15,10 +15,10 @@ setTimeout(grid,1000);
 
 
 function slide(){
-    $(".front-layer").animate({'left': '0%'},1500);
-    $(".back-layer").animate({'right': '0%'},1000);
-    $(".header-menu").animate({'top': "0%"},2000);
-    $(".header-title").css("display","none").fadeIn(2500);
+    $(".front-layer").animate({'left': '0%'},900);
+    $(".back-layer").animate({'right': '0%'},500);
+    $(".header-menu").animate({'top': "0%"},1300);
+    $(".header-title").css("display","none").fadeIn(1700);
 };
 setTimeout(slide, 3500);
 
