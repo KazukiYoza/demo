@@ -1,0 +1,150 @@
+@mixin box($width: 100%,$height: 100vh)
+    width: $width
+    height: $height
+
+$pc: 2000px; // PC
+$tab: 680px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc 
+  @media (max-width: ($pc))
+    @content
+  
+
+@mixin tab 
+  @media (max-width: ($tab))
+    @content
+
+@mixin sp
+  @media (max-width: ($sp))
+    @content
+  
+    
+.grid
+    display: grid
+    z-index: 6
+    @include pc
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+        grid-auto-rows: calc(100vw / 6) calc(100vw / 6) calc(100vw / 6) calc(100vw / 6) calc(100vw / 6) calc(100vw / 6)
+    @include sp
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        grid-auto-rows: calc(100vw / 4) calc(100vw / 4) calc(100vw / 4) calc(100vw / 4) //calc(100vw / 5)
+
+
+.g1,.g2,.g3,.g4,.g5,.g6,.g7,.g8,.g9,.g10
+    background-color: black
+
+.white
+    @include box
+    background-color: white
+    position: absolute
+    z-index: 4
+    .slide
+        @include box(0%,100%)
+        position: absolute
+        right: 0;
+        overflow: hidden;
+        transition: 1000ms linear;
+        background-color: black
+        z-index: 4
+    // &before
+    //     animation: img-wrap 2s cubic-bezier(.4, 0, .2, 1) forwards
+    //     background: #fff
+    //     bottom: 0
+    //     content: ''
+    //     left: 0
+    //     pointer-events: none
+    //     position: absolute
+    //     right: 0
+    //     top: 0
+    //     z-index: 5
+
+    // @keyframes black 
+    //     100%
+    //     transform: translateX(-100%)
+
+    // .black-slide
+    //     @include box(0%,100%)
+    //     background-color: #000
+    //     position: fixed
+    //     z-index: 5
+
+
+.header-container
+    @include box
+    background-color: #fff
+    position: relative
+    overflow: hidden
+    .header-menu
+        @include box(100%,60px)
+        position: fixed
+        top: -60px
+        z-index: 4
+        ul
+            display: flex
+            flex-direction: row
+            justify-content: flex-end
+            li
+                padding: 20px
+                color: white
+    .front-layer
+        @include box(75%,85vh)
+        margin: 0 25% 0 0
+        background-color: green
+        z-index: 2
+        left: -75%
+        position: absolute
+        img
+            width: 100%
+            height: 100%
+    .back-layer
+        @include box(70%,100vh)
+        background-color: #000
+        z-index: 1
+        right: -70%
+        margin: 0 0 0 30%
+        position: absolute
+    .header-title
+        @extend .back-layer
+        right: 0%
+        z-index: 4
+        font-family: 'MS Gothic'
+        background-color: rgba(0,0,0,0)
+        color: white
+        @include pc
+            padding: 20% 0
+            h1
+                font-size: 50px
+            p
+                font-size: 30px
+        @include sp
+            padding: 40% 0
+            h1
+                font-size: 40px
+            p
+                font-size: 20px
+    .scroll-navi
+        width: 100px
+        height: 30px
+        // border-bottom: 1px solid #000000
+        // border-left: 1px solid transparent;
+        // border-top: 1px solid transparent;
+        color: black
+        font-size: 20px
+        position: absolute
+        bottom: 50px
+        left: 20px
+        transform: rotate(-90deg) 
+        text-align: center
+        z-index: 4
+        // overflow: hidden
+        p
+            position: relative
+    .line
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 0
+        height: 3px
+        background: #000000
+        z-index: 100
