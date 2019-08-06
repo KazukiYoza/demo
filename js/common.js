@@ -9,18 +9,18 @@ function grid(){
     $(".g8").animate({'background-color':'#ffffff'},140);
     $(".g9").animate({'background-color':'#ffffff'},1200);
     $(".g10").animate({'background-color':'#ffffff'},1000);
-    $(".grid").fadeOut(2000);
+    $(".grid").fadeOut(2500);
 };
 setTimeout(grid,1000);
 
 
 function slide(){
-    $(".front-layer").animate({'left': '0%'},1000);
-    $(".back-layer").animate({'right': '0%'},500);
-    $(".header-menu").animate({'top': "0%"},1500);
-    $(".header-title").css("display","none").fadeIn(1600);
+    $(".front-layer").animate({'left': '0%'},1500);
+    $(".back-layer").animate({'right': '0%'},1000);
+    $(".header-menu").animate({'top': "0%"},2000);
+    $(".header-title").css("display","none").fadeIn(2500);
 };
-setTimeout(slide, 2500);
+setTimeout(slide, 3500);
 
 
 function line(){
