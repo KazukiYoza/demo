@@ -4,10 +4,10 @@ function grid(){
     $(".g3").animate({'background-color':'#ffffff'},1200);
     $(".g4").animate({'background-color':'#ffffff'},700);
     $(".g5").animate({'background-color':'#ffffff'},1600);
-    $(".g6").animate({'background-color':'#ffffff'},1400);
+    $(".g6").animate({'background-color':'#ffffff'},400);
     $(".g7").animate({'background-color':'#ffffff'},800);
-    $(".g8").animate({'background-color':'#ffffff'},140);
-    $(".g9").animate({'background-color':'#ffffff'},1200);
+    $(".g8").animate({'background-color':'#ffffff'},1100);
+    $(".g9").animate({'background-color':'#ffffff'},500);
     $(".g10").animate({'background-color':'#ffffff'},1000);
     $(".grid").fadeOut(2500);
 };
