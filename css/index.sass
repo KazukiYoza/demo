@@ -244,7 +244,7 @@ header
         @include box(100%,90vh)
         flex-direction: row
     @include sp
-        @include box(100%,150vh)
+        @include box(100%,120vh)
         flex-direction: column
     .content
         @include pc
@@ -252,7 +252,8 @@ header
             background-color: green
             border: 1px solid #fff
         @include sp
-            @include box(100%,33%)
+            @include box(90%,33%)
+            margin: 0 auto
             background-color: blue
             border: 1px solid #fff
     .moving-border
@@ -317,6 +318,7 @@ header
         
 // ホバーしたときのアニメーションPC
 .moving-border
+    @include pc
     &:hover
         &:before
             animation: leftAnim .5s linear 0s forwards
@@ -331,6 +333,7 @@ header
 
 // ホバーしたときのアニメーションsp
 .sphover
+    @include sp
     &:before
             animation: leftAnim .5s linear 0s forwards
     &:after
@@ -366,3 +369,46 @@ header
         right: -100%
     100%
         right: 0%
+
+.works
+    @include box(100%,160vh)
+    .flex-container
+        @include box(90%,45%)
+        margin: 0 auto 5% auto
+        display: flex
+        background-color: gray
+        @include pc
+            flex-direction: row
+        @include sp
+            flex-direction: column
+        .image
+            img
+                width: 100%
+                height: 100%
+            @include pc
+                @include box(50%,100%)
+                // padding: 0 5%
+            @include sp
+                @include box(100%,50%)
+        .text
+            @extend .image
+            text-align: center
+            @include pc
+                padding: 5%
+            @include sp
+                padding: 10%        
+
+.contact
+    @include box(100%,80vh)
+    text-align: center
+    .image
+        @include box(80%,50%)
+        margin: 0 auto
+        img
+            width: auto
+            height: 100%
+    .text
+        @include box(80%,40%)
+        margin: 0 auto
+    .btn
+        @include box(80%,20%)

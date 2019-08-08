@@ -264,7 +264,7 @@ header {
   }
 }
 
-.about .about-container .image {
+.about .about-container .image, .about .about-container .works .flex-container .text, .works .flex-container .about .about-container .text {
   width: 100%;
   height: 0%;
 }
@@ -342,7 +342,7 @@ header {
 @media (max-width: 480px) {
   .service {
     width: 100%;
-    height: 150vh;
+    height: 120vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -361,8 +361,9 @@ header {
 
 @media (max-width: 480px) {
   .service .content {
-    width: 100%;
+    width: 90%;
     height: 33%;
+    margin: 0 auto;
     background-color: blue;
     border: 1px solid #fff;
   }
@@ -580,5 +581,101 @@ header {
   100% {
     right: 0%;
   }
+}
+
+.works {
+  width: 100%;
+  height: 160vh;
+}
+
+.works .flex-container {
+  width: 90%;
+  height: 45%;
+  margin: 0 auto 5% auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: gray;
+}
+
+@media (max-width: 2000px) {
+  .works .flex-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media (max-width: 480px) {
+  .works .flex-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.works .flex-container .image img, .works .flex-container .text img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 2000px) {
+  .works .flex-container .image, .works .flex-container .text {
+    width: 50%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .works .flex-container .image, .works .flex-container .text {
+    width: 100%;
+    height: 50%;
+  }
+}
+
+.works .flex-container .text {
+  text-align: center;
+}
+
+@media (max-width: 2000px) {
+  .works .flex-container .text {
+    padding: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .works .flex-container .text {
+    padding: 10%;
+  }
+}
+
+.contact {
+  width: 100%;
+  height: 80vh;
+  text-align: center;
+}
+
+.contact .image, .contact .works .flex-container .text, .works .flex-container .contact .text {
+  width: 80%;
+  height: 50%;
+  margin: 0 auto;
+}
+
+.contact .image img, .contact .works .flex-container .text img, .works .flex-container .contact .text img {
+  width: auto;
+  height: 100%;
+}
+
+.contact .text {
+  width: 80%;
+  height: 40%;
+  margin: 0 auto;
+}
+
+.contact .btn {
+  width: 80%;
+  height: 20%;
 }
 /*# sourceMappingURL=index.css.map */
