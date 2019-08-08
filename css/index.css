@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  background-color: #FCFCFC;
+  background-color: #fff;
 }
 
 h1 {
@@ -275,6 +275,7 @@ header {
 
 .area {
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+  background-color: #f3f3f3;
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -440,7 +441,7 @@ header {
 .section-title {
   width: 100%;
   height: 25%;
-  margin: 5% auto;
+  padding: 20px 0px;
   text-align: center;
 }
 
@@ -727,12 +728,12 @@ header {
 .works .flex-container {
   width: 90%;
   height: 45%;
-  margin: 0 auto 5% auto;
+  margin: 5% auto 5% auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-shadow: 1px 2px 0px 1px rgba(240, 240, 240, 0.3);
-          box-shadow: 1px 2px 0px 1px rgba(240, 240, 240, 0.3);
+  -webkit-box-shadow: 1px 2px 0px 3px rgba(240, 240, 240, 0.5);
+          box-shadow: 1px 2px 0px 3px rgba(240, 240, 240, 0.5);
 }
 
 @media (max-width: 2000px) {
@@ -747,28 +748,28 @@ header {
 @media (max-width: 480px) {
   .works .flex-container {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
 }
 
-.works .flex-container .image img, .works .flex-container .text img {
+.works .flex-container .image img {
   width: 100%;
   height: 100%;
 }
 
 @media (max-width: 2000px) {
-  .works .flex-container .image, .works .flex-container .text {
+  .works .flex-container .image {
     width: 50%;
     height: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  .works .flex-container .image, .works .flex-container .text {
+  .works .flex-container .image {
     width: 100%;
-    height: 65%;
+    height: 60%;
   }
 }
 
@@ -779,19 +780,22 @@ header {
 
 @media (max-width: 2000px) {
   .works .flex-container .text {
-    padding: 5%;
+    width: 50%;
+    height: 100%;
+    padding: 10% 5%;
   }
 }
 
 @media (max-width: 480px) {
   .works .flex-container .text {
     width: 100%;
-    height: 35%;
+    height: 40%;
     padding: 5%;
   }
 }
 
 .contact {
+  background-color: #fff;
   text-align: center;
 }
 

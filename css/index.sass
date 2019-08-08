@@ -2,13 +2,16 @@
     width: $width
     height: $height
 
-@mixin btn($width: 200px,$height: 50px)
-    display: block
-    margin: 30px auto
-    width: $width
-    height: $height
-    border-radius: 10px
-    color: white
+// @mixin btn($color:orange)
+//     display: block
+//     margin: 10px auto
+//     width: 200px
+//     height: 50px
+//     border-radius: 10px
+//     color: white
+//     background-color: $color
+//     box-shadow: 1px 2px 0px 3px rgba(240,240,240,0.3);
+
 
 $pc: 2000px; // PC
 $tab: 680px; // タブレット
@@ -31,13 +34,9 @@ $sp: 480px;  // スマホ
   @keyframes #{$animation-name}
     @content
 
-// @mixin keyframes($anim-name,$start,$s-num,$goal,$g-num)
-//     #{$anim-name}
-//         #{$start}: #{$s-num}
-//         #{$goal}: #{$g-num}
 
 body
-    background-color: #FCFCFC    
+    background-color: #fff    
 h1
     font-family: 'Dosis', sans-serif, monospace,'Oswald', sans-serif
     @include pc
@@ -92,15 +91,7 @@ li
     //     top: 0
     //     z-index: 5
 
-    // @keyframes black 
-    //     100%
-    //     transform: translateX(-100%)
 
-    // .black-slide
-    //     @include box(0%,100%)
-    //     background-color: #000
-    //     position: fixed
-    //     z-index: 5
 header
     @include box(100%,100vh)
 
@@ -213,6 +204,7 @@ header
 .area
     // background: #4e54c8  
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8)
+    background-color: #f3f3f3
     position: absolute
     z-index: -1
     width: 100%
@@ -305,35 +297,11 @@ header
 .service
     text-align: center
 
-// .layer1
-//     @include box(calc(100vw/6),calc(100vw/6))
-//     background-color: rgba(59,60,65,0.4)
-//     position: absolute
-//     top: 10%
-//     left: 0%
-
-// .layer2
-//     @include box((calc(100vw/10)),calc(100vw/10))
-//     background-color: rgba(102,122,145,0.4)
-//     position: absolute
-//     bottom: 0%
-//     right: 0%
-// .layer3
-//     @include box((calc(100vw/8)),calc(100vw/8))
-//     background-color: rgba(76,76,78,0.4)
-//     position: absolute
-//     bottom: 10%
-//     left: 30%
-// .layer4
-//     @include box((calc(100vw/8)),calc(100vw/8))
-//     background-color: rgba(76,76,78,0.4)
-//     position: absolute
-//     top: 20%
-//     right: 20%
 
 .section-title
     @include box(100%,25%)
-    margin: 5% auto
+    // margin: 5% auto
+    padding: 20px 0px
     text-align: center    
 
 
@@ -478,15 +446,13 @@ header
         @include box(100%,130vh)
     .flex-container
         @include box(90%,45%)
-        margin: 0 auto 5% auto
+        margin: 5% auto 5% auto
         display: flex
-        // background-color: gray
-        box-shadow: 1px 2px 0px 1px rgba(240,240,240,0.3);
-
+        box-shadow: 1px 2px 0px 3px rgba(240,240,240,0.5)
         @include pc
             flex-direction: row
         @include sp
-            flex-direction: column
+            flex-direction: column-reverse
         .image
             img
                 width: 100%
@@ -494,18 +460,21 @@ header
             @include pc
                 @include box(50%,100%)
             @include sp
-                @include box(100%,65%)
+                @include box(100%,60%)
         .text
             background-color: #fff
-            @extend .image
             text-align: center
             @include pc
-                padding: 5%
+                @include box(50%,100%)
+                padding: 10% 5%
             @include sp
-                @include box(100%,35%)
+                @include box(100%,40%)
                 padding: 5%        
+             
+
 
 .contact
+    background-color: #fff
     text-align: center
     @include pc
         @include box(100%,80vh)
@@ -525,6 +494,7 @@ header
             border: 7px solid #0087CE
             border-radius: 7px
 
+// 要素が画面に表示されたらフェードイン
 .effect-fade 
 	opacity: 0
 	transform: translate(0, 45px)
