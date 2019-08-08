@@ -315,19 +315,32 @@ header
             width: 100%
             height: 2px
         
-// ホバーしたときのアニメーション
+// ホバーしたときのアニメーションPC
 .moving-border
     &:hover
         &:before
-            animation: leftAnim .7s linear 0s forwards
+            animation: leftAnim .5s linear 0s forwards
         &:after
-            animation: topAnim .7s linear 0s forwards
+            animation: topAnim .5s linear 0s forwards
     .container
-        &:hover
+        &:hover,.sphover
             &:before
-                animation: bottomAnim .7s linear 0s forwards
+                animation: bottomAnim .5s linear 0s forwards
             &:after
-                animation: rightAnim .7s linear 0s forwards
+                animation: rightAnim .5s linear 0s forwards
+
+// ホバーしたときのアニメーションsp
+.sphover
+    &:before
+            animation: leftAnim .5s linear 0s forwards
+    &:after
+            animation: topAnim .5s linear 0s forwards
+    .container
+        &:before
+            animation: bottomAnim .5s linear 0s forwards
+        &:after
+            animation: rightAnim .5s linear 0s forwards
+  
 
 /* 各アニメーション */
 @include keyframes(topAnim)

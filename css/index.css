@@ -471,23 +471,43 @@ header {
 }
 
 .moving-border:hover:before {
-  -webkit-animation: leftAnim .7s linear 0s forwards;
-          animation: leftAnim .7s linear 0s forwards;
+  -webkit-animation: leftAnim .5s linear 0s forwards;
+          animation: leftAnim .5s linear 0s forwards;
 }
 
 .moving-border:hover:after {
-  -webkit-animation: topAnim .7s linear 0s forwards;
-          animation: topAnim .7s linear 0s forwards;
+  -webkit-animation: topAnim .5s linear 0s forwards;
+          animation: topAnim .5s linear 0s forwards;
 }
 
-.moving-border .container:hover:before {
-  -webkit-animation: bottomAnim .7s linear 0s forwards;
-          animation: bottomAnim .7s linear 0s forwards;
+.moving-border .container:hover:before, .moving-border .container .sphover:before {
+  -webkit-animation: bottomAnim .5s linear 0s forwards;
+          animation: bottomAnim .5s linear 0s forwards;
 }
 
-.moving-border .container:hover:after {
-  -webkit-animation: rightAnim .7s linear 0s forwards;
-          animation: rightAnim .7s linear 0s forwards;
+.moving-border .container:hover:after, .moving-border .container .sphover:after {
+  -webkit-animation: rightAnim .5s linear 0s forwards;
+          animation: rightAnim .5s linear 0s forwards;
+}
+
+.sphover:before {
+  -webkit-animation: leftAnim .5s linear 0s forwards;
+          animation: leftAnim .5s linear 0s forwards;
+}
+
+.sphover:after {
+  -webkit-animation: topAnim .5s linear 0s forwards;
+          animation: topAnim .5s linear 0s forwards;
+}
+
+.sphover .container:before {
+  -webkit-animation: bottomAnim .5s linear 0s forwards;
+          animation: bottomAnim .5s linear 0s forwards;
+}
+
+.sphover .container:after {
+  -webkit-animation: rightAnim .5s linear 0s forwards;
+          animation: rightAnim .5s linear 0s forwards;
 }
 
 /* 各アニメーション */

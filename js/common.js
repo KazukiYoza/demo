@@ -38,6 +38,27 @@ function line(){
 }
 line();
 
+$(window).on('scroll', function (){
+    // var move = $('.moving-border');
+    // move.each(function () {
+    
+      var moveOffset = $('.moving-border').offset().top;
+      var scrollPos = $(window).scrollTop();
+      var wh = $(window).height();
+  
+      if(scrollPos > moveOffset - wh + (wh / 2) ){
+        $('.moving-border').addClass('sphover');
+        $('.moving-border .container').addClass('sphover');
+        console.log("clear")
+      }else{
+        $('.moving-border').removeClass('sphover');
+        $('.moving-border .container').removeClass('sphover');
+        console.log("clear2")
+        }
+    });
+  
+//   });
+
 // エフェクト1
 (function() {
     setTimeout(init, 10);
