@@ -471,6 +471,7 @@ header
         right: 0%
 
 .works
+    background-color: #f3f3f3
     @include pc
         @include box(100%,150vh)
     @include sp
@@ -479,7 +480,9 @@ header
         @include box(90%,45%)
         margin: 0 auto 5% auto
         display: flex
-        background-color: gray
+        // background-color: gray
+        box-shadow: 1px 2px 0px 1px rgba(240,240,240,0.3);
+
         @include pc
             flex-direction: row
         @include sp
@@ -491,15 +494,16 @@ header
             @include pc
                 @include box(50%,100%)
             @include sp
-                @include box(100%,70%)
+                @include box(100%,65%)
         .text
+            background-color: #fff
             @extend .image
             text-align: center
             @include pc
                 padding: 5%
             @include sp
-                @include box(100%,30%)
-                padding: 10%        
+                @include box(100%,35%)
+                padding: 5%        
 
 .contact
     text-align: center
@@ -509,7 +513,7 @@ header
         @include box(100%,60vh)
     .text
         @include box(80%,20%)
-        margin: 0 auto
+        margin: 5% auto
     .btn
         @include box(100%,20%)
         .mailbtn
@@ -520,4 +524,11 @@ header
             padding: 45px 20px 40px 20px
             border: 7px solid #0087CE
             border-radius: 7px
-            // text-align: center
+
+.effect-fade 
+	opacity: 0
+	transform: translate(0, 45px)
+	transition: all 1.5s
+.effect-scroll
+    opacity: 1
+    transform: translate(0, 0)
