@@ -38,7 +38,6 @@ function line(){
 }
 line();
 
-
 // エフェクト1
 (function() {
     setTimeout(init, 10);

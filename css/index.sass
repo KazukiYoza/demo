@@ -1,8 +1,3 @@
-h1,p
-    font-family: 'Noto Sans JP','Oswald', sans-serif
-li
-    font-family: 'Oswald', sans-serif
-
 @mixin box($width: 100%,$height: 95vh)
     width: $width
     height: $height
@@ -23,6 +18,31 @@ $sp: 480px;  // スマホ
 @mixin sp
   @media (max-width: ($sp))
     @content
+
+@mixin keyframes($animation-name)
+  @keyframes #{$animation-name}
+    @content
+
+// @mixin keyframes($anim-name,$start,$s-num,$goal,$g-num)
+//     #{$anim-name}
+//         #{$start}: #{$s-num}
+//         #{$goal}: #{$g-num}
+
+body
+    background-color: #FCFCFC    
+h1
+    font-family: 'Dosis', sans-serif, monospace,'Oswald', sans-serif
+    @include pc
+        font-size: 40px
+p
+    font-family: 'Noto Sans JP','Oswald', sans-serif
+    @include pc
+        font-size: 17px
+    @include sp
+        font-size: 13px
+li
+    font-family: 'Dosis', sans-serif
+    font-weight: medium
   
     
 .grid
@@ -73,7 +93,8 @@ $sp: 480px;  // スマホ
     //     background-color: #000
     //     position: fixed
     //     z-index: 5
-
+header
+    @include box(100%,100vh)
 
 .header-container
     @include box
@@ -152,3 +173,183 @@ $sp: 480px;  // スマホ
         height: 3px
         background: #000000
         z-index: 100
+
+.about
+    margin-top: 30px
+    // background-color: rgb(240,240,240)
+    position: relative
+    @include pc
+        @include box(100%,100vh)
+    @include sp
+        @include box(100%,90vh)
+    .about-container
+        @include pc
+            @include box(70%,100%)
+            background-color: aqua
+            margin: 0 auto
+        @include sp
+            @include box(70%,85%)
+        .title
+            text-align: center
+            // background-color: green
+            @include pc
+                @include box(100%,20%)
+            @include sp
+                @include box(100%,10%)        
+        .image
+            @include box(100%,0%)
+            // background-color: red
+        .txt
+            @include box(100%,80%)
+            // background-color: gray
+.service
+    text-align: center
+
+.layer1
+    @include box(calc(100vw/6),calc(100vw/6))
+    background-color: rgba(59,60,65,0.4)
+    position: absolute
+    top: 10%
+    left: 0%
+
+.layer2
+    @include box((calc(100vw/10)),calc(100vw/10))
+    background-color: rgba(102,122,145,0.4)
+    position: absolute
+    bottom: 0%
+    right: 0%
+.layer3
+    @include box((calc(100vw/8)),calc(100vw/8))
+    background-color: rgba(76,76,78,0.4)
+    position: absolute
+    bottom: 10%
+    left: 30%
+.layer4
+    @include box((calc(100vw/8)),calc(100vw/8))
+    background-color: rgba(76,76,78,0.4)
+    position: absolute
+    top: 20%
+    right: 20%
+
+.section-title
+    @include box(100%,25%)
+    margin: 5% auto
+    text-align: center    
+
+
+.service
+    display: flex
+    background-color: red
+    @include pc
+        @include box(100%,90vh)
+        flex-direction: row
+    @include sp
+        @include box(100%,150vh)
+        flex-direction: column
+    .content
+        @include pc
+            @include box(33.3%,100%)
+            background-color: green
+            border: 1px solid #fff
+        @include sp
+            @include box(100%,33%)
+            background-color: blue
+            border: 1px solid #fff
+    .moving-border
+        @include box(85%,80%)
+        position: relative
+        overflow: hidden
+        background-color: pink
+        @include pc
+            margin: 15% auto
+        @include sp
+            margin: 10% auto
+        .container
+            @include box(100%,100%)
+            .content-title
+                @include pc
+                    @include box(100%,30%)
+                    background-color: yellow
+                @include sp
+                    @include box(100%,20%)
+            .content-txt
+                @include pc
+                    @include box(100%,40%)
+                    background-color: orange
+                @include sp
+                    @include box(100%,50%)
+            .content-btn
+                @include box(100%,30%)
+                background-color: purple
+
+// ボーダーの指定
+.moving-border
+    &:before,&:after
+        content: ''
+        position: absolute
+        background: #fff
+        z-index: 100
+    &:before //上の線　左から右へ
+        top: 0
+        left: -100%
+        width: 100%
+        height: 2px
+    &:after //左の線　上から下へ
+        top: -100%
+        left: 0
+        width: 2px
+        height: 100%  
+    .container
+        &:before,&:after
+            content: ''
+            position: absolute
+            background: #fff
+        &:before //右の線　下から上へ
+            bottom: -100%
+            right: 0
+            width: 2px
+            height: 100%
+        &:after //下の線　右から左へ
+            bottom: 0
+            right: -100%
+            width: 100%
+            height: 2px
+        
+// ホバーしたときのアニメーション
+.moving-border
+    &:hover
+        &:before
+            animation: leftAnim .7s linear 0s forwards
+        &:after
+            animation: topAnim .7s linear 0s forwards
+    .container
+        &:hover
+            &:before
+                animation: bottomAnim .7s linear 0s forwards
+            &:after
+                animation: rightAnim .7s linear 0s forwards
+
+/* 各アニメーション */
+@include keyframes(topAnim)
+    0% 
+        top: -100%
+    100%
+        top: 0%
+
+@include keyframes(bottomAnim)
+    0%
+        bottom: -100%
+    100%
+        bottom: 0%
+
+@include keyframes(leftAnim)
+    0%
+        left: -100%
+    100%
+        left: 0%
+
+@include keyframes(rightAnim)
+    0%
+        right: -100%
+    100%
+        right: 0%
