@@ -37,16 +37,27 @@ $sp: 480px;  // スマホ
 
 body
     background-color: #fff    
+h1,h2,
+    font-family: 'Dosis','Oswald','Noto Sans JP', sans-serif
+    text-align: center
+
 h1
-    font-family: 'Dosis', sans-serif, monospace,'Oswald', sans-serif
     @include pc
         font-size: 40px
+    @include sp
+        font-size: 30px
+h2
+    margin: 10px auto
+    @include pc
+        font-size: 30px
+    @include sp
+        font-size: 20px
 p
     font-family: 'Noto Sans JP','Oswald', sans-serif
     @include pc
-        font-size: 17px
+        font-size: 20px
     @include sp
-        font-size: 13px
+        font-size: 15px
 li
     font-family: 'Oswald', sans-serif
     font-weight: medium
@@ -79,18 +90,6 @@ li
         transition: 1000ms linear;
         background-color: black
         z-index: 4
-    // &before
-    //     animation: img-wrap 2s cubic-bezier(.4, 0, .2, 1) forwards
-    //     background: #fff
-    //     bottom: 0
-    //     content: ''
-    //     left: 0
-    //     pointer-events: none
-    //     position: absolute
-    //     right: 0
-    //     top: 0
-    //     z-index: 5
-
 
 header
     @include box(100%,100vh)
@@ -175,7 +174,6 @@ header
 
 .about
     margin-top: 30px
-    // background-color: rgb(240,240,240)
     position: relative
     @include pc
         @include box(100%,100vh)
@@ -186,12 +184,10 @@ header
         position: absolute
         @include pc
             @include box(100%,100%)
-            // background-color: aqua
         @include sp
             @include box(100%,100%)
         .title
             text-align: center
-            // background-color: green
             @include pc
                 @include box(100%,20%)
             @include sp
@@ -199,10 +195,8 @@ header
         .txt
             @include box(70%,80%)
             margin: 0 auto
-            // background-color: gray
-            
+                        
 .area
-    // background: #4e54c8  
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8)
     background-color: #f3f3f3
     position: absolute
@@ -300,7 +294,6 @@ header
 
 .section-title
     @include box(100%,25%)
-    // margin: 5% auto
     padding: 20px 0px
     text-align: center    
 
@@ -312,44 +305,40 @@ header
         @include box(100%,90vh)
         flex-direction: row
     @include sp
-        @include box(100%,120vh)
+        @include box(100%,110vh)
         flex-direction: column
     .content
         @include pc
             @include box(33.3%,100%)
-            background-color: green
             border: 1px solid #fff
         @include sp
             @include box(100%,33%)
             margin: 0 auto
-            background-color: blue
             border: 1px solid #fff
     .moving-border
         @include box(85%,80%)
         position: relative
         overflow: hidden
-        background-color: pink
         @include pc
             margin: 15% auto
         @include sp
-            margin: 10% auto
+            margin: 8% auto
         .container
             @include box(100%,100%)
             .content-title
                 @include pc
                     @include box(100%,30%)
-                    background-color: yellow
                 @include sp
-                    @include box(100%,20%)
+                    @include box(100%,30%)
             .content-txt
                 @include pc
-                    @include box(100%,40%)
+                    @include box(100%,70%)
                     background-color: orange
                 @include sp
-                    @include box(100%,50%)
-            .content-btn
-                @include box(100%,30%)
-                background-color: purple
+                    @include box(100%,70%)
+            // .content-btn
+            //     @include box(100%,30%)
+            //     background-color: purple
 
 // ボーダーの指定
 .moving-border
@@ -411,7 +400,16 @@ header
             animation: bottomAnim .5s linear 0s forwards
         &:after
             animation: rightAnim .5s linear 0s forwards
-  
+
+.sp-overlay
+  content: ""
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+  z-index: 6
+  background: rgba(0, 0, 0, 0.6)
 
 /* 各アニメーション */
 @include keyframes(topAnim)
@@ -437,6 +435,12 @@ header
         right: -100%
     100%
         right: 0%
+
+
+#s1
+    background-image: url("../img/homepage.jpg")
+#s2
+    background-image: url("../img/writing.jpg")
 
 .works
     background-color: #f3f3f3
@@ -469,8 +473,10 @@ header
                 padding: 10% 5%
             @include sp
                 @include box(100%,40%)
-                padding: 5%        
-             
+                font-size: 15px
+                padding: 5%
+            p
+                word-wrap: break-word
 
 
 .contact

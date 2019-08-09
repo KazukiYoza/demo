@@ -3,13 +3,36 @@ body {
   background-color: #fff;
 }
 
-h1 {
-  font-family: 'Dosis', sans-serif, monospace,'Oswald', sans-serif;
+h1, h2 {
+  font-family: 'Dosis','Oswald','Noto Sans JP', sans-serif;
+  text-align: center;
 }
 
 @media (max-width: 2000px) {
   h1 {
     font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+h2 {
+  margin: 10px auto;
+}
+
+@media (max-width: 2000px) {
+  h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 20px;
   }
 }
 
@@ -19,13 +42,13 @@ p {
 
 @media (max-width: 2000px) {
   p {
-    font-size: 17px;
+    font-size: 20px;
   }
 }
 
 @media (max-width: 480px) {
   p {
-    font-size: 13px;
+    font-size: 15px;
   }
 }
 
@@ -466,7 +489,7 @@ header {
 @media (max-width: 480px) {
   .service {
     width: 100%;
-    height: 120vh;
+    height: 110vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -478,7 +501,6 @@ header {
   .service .content {
     width: 33.3%;
     height: 100%;
-    background-color: green;
     border: 1px solid #fff;
   }
 }
@@ -488,7 +510,6 @@ header {
     width: 100%;
     height: 33%;
     margin: 0 auto;
-    background-color: blue;
     border: 1px solid #fff;
   }
 }
@@ -498,7 +519,6 @@ header {
   height: 80%;
   position: relative;
   overflow: hidden;
-  background-color: pink;
 }
 
 @media (max-width: 2000px) {
@@ -509,7 +529,7 @@ header {
 
 @media (max-width: 480px) {
   .service .moving-border {
-    margin: 10% auto;
+    margin: 8% auto;
   }
 }
 
@@ -522,21 +542,20 @@ header {
   .service .moving-border .container .content-title {
     width: 100%;
     height: 30%;
-    background-color: yellow;
   }
 }
 
 @media (max-width: 480px) {
   .service .moving-border .container .content-title {
     width: 100%;
-    height: 20%;
+    height: 30%;
   }
 }
 
 @media (max-width: 2000px) {
   .service .moving-border .container .content-txt {
     width: 100%;
-    height: 40%;
+    height: 70%;
     background-color: orange;
   }
 }
@@ -544,14 +563,8 @@ header {
 @media (max-width: 480px) {
   .service .moving-border .container .content-txt {
     width: 100%;
-    height: 50%;
+    height: 70%;
   }
-}
-
-.service .moving-border .container .content-btn {
-  width: 100%;
-  height: 30%;
-  background-color: purple;
 }
 
 .moving-border:before, .moving-border:after {
@@ -707,6 +720,14 @@ header {
   }
 }
 
+#s1 {
+  background-image: url("../img/homepage.jpg");
+}
+
+#s2 {
+  background-image: url("../img/writing.jpg");
+}
+
 .works {
   background-color: #f3f3f3;
 }
@@ -790,8 +811,13 @@ header {
   .works .flex-container .text {
     width: 100%;
     height: 40%;
+    font-size: 15px;
     padding: 5%;
   }
+}
+
+.works .flex-container .text p {
+  word-wrap: break-word;
 }
 
 .contact {
