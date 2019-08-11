@@ -14,18 +14,7 @@ h1 {
 
 h2 {
   margin: 10px auto;
-}
-
-@media (max-width: 2000px) {
-  h2 {
-    font-size: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  h2 {
-    font-size: 20px;
-  }
+  font-size: 30px;
 }
 
 p {
@@ -112,6 +101,7 @@ header {
   width: 100%;
   height: 60px;
   position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
   top: -60px;
   z-index: 4;
 }
@@ -509,7 +499,7 @@ header {
   }
 }
 
-.service .content:before {
+.service .content::before {
   content: ' ';
   position: absolute;
   top: 0;
@@ -519,7 +509,7 @@ header {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.service .moving-border {
+.service .content .moving-border {
   width: 85%;
   height: 80%;
   position: relative;
@@ -527,29 +517,29 @@ header {
 }
 
 @media (max-width: 2000px) {
-  .service .moving-border {
+  .service .content .moving-border {
     margin: 15% auto;
   }
 }
 
 @media (max-width: 480px) {
-  .service .moving-border {
+  .service .content .moving-border {
     margin: 8% auto;
   }
 }
 
-.service .moving-border .container {
+.service .content .moving-border .container {
   width: 100%;
   height: 100%;
 }
 
-.service .moving-border .container .content-title {
+.service .content .moving-border .container .content-title {
   z-index: 100;
   color: white;
 }
 
 @media (max-width: 2000px) {
-  .service .moving-border .container .content-title {
+  .service .content .moving-border .container .content-title {
     width: 100%;
     height: 30%;
     padding: 5% 0;
@@ -557,26 +547,26 @@ header {
 }
 
 @media (max-width: 480px) {
-  .service .moving-border .container .content-title {
+  .service .content .moving-border .container .content-title {
     width: 100%;
     height: 30%;
     padding: 5% 0;
   }
 }
 
-.service .moving-border .container .content-txt {
+.service .content .moving-border .container .content-txt {
   z-index: 100;
 }
 
 @media (max-width: 2000px) {
-  .service .moving-border .container .content-txt {
+  .service .content .moving-border .container .content-txt {
     width: 100%;
     height: 70%;
   }
 }
 
 @media (max-width: 480px) {
-  .service .moving-border .container .content-txt {
+  .service .content .moving-border .container .content-txt {
     width: 100%;
     height: 70%;
   }
@@ -625,48 +615,43 @@ header {
 }
 
 .moving-border:hover:before {
-  -webkit-animation: leftAnim .5s linear 0s forwards;
-          animation: leftAnim .5s linear 0s forwards;
-}
-
-.moving-border:hover:after {
-  -webkit-animation: topAnim .5s linear 0s forwards;
-          animation: topAnim .5s linear 0s forwards;
-}
-
-.moving-border .container:hover:before, .moving-border .container .sphover:before {
-  -webkit-animation: bottomAnim .5s linear 0s forwards;
-          animation: bottomAnim .5s linear 0s forwards;
-}
-
-.moving-border .container:hover:after, .moving-border .container .sphover:after {
-  -webkit-animation: rightAnim .5s linear 0s forwards;
-          animation: rightAnim .5s linear 0s forwards;
-}
-
-.sphover:before {
   -webkit-animation: leftAnim .4s linear 0s forwards;
           animation: leftAnim .4s linear 0s forwards;
 }
 
-.sphover:after {
+.moving-border:hover:after {
   -webkit-animation: topAnim .4s linear 0s forwards;
           animation: topAnim .4s linear 0s forwards;
 }
 
-.sphover .container:before {
+.moving-border .container:hover:before, .moving-border .container .sphover:before {
   -webkit-animation: bottomAnim .4s linear 0s forwards;
           animation: bottomAnim .4s linear 0s forwards;
 }
 
-.sphover .container:after {
+.moving-border .container:hover:after, .moving-border .container .sphover:after {
   -webkit-animation: rightAnim .4s linear 0s forwards;
           animation: rightAnim .4s linear 0s forwards;
 }
 
-.sphover .content:before {
-  -webkit-animation: bg_black .4s linear 0s forwards;
-          animation: bg_black .4s linear 0s forwards;
+.sphover:before {
+  -webkit-animation: leftAnim .3s linear 0s forwards;
+          animation: leftAnim .3s linear 0s forwards;
+}
+
+.sphover:after {
+  -webkit-animation: topAnim .3s linear 0s forwards;
+          animation: topAnim .3s linear 0s forwards;
+}
+
+.sphover .container:before {
+  -webkit-animation: bottomAnim .3s linear 0s forwards;
+          animation: bottomAnim .3s linear 0s forwards;
+}
+
+.sphover .container:after {
+  -webkit-animation: rightAnim .3s linear 0s forwards;
+          animation: rightAnim .3s linear 0s forwards;
 }
 
 /* 各アニメーション */
@@ -738,24 +723,6 @@ header {
   }
   100% {
     right: 0%;
-  }
-}
-
-@-webkit-keyframes bg_black {
-  0% {
-    background-color: rgba(0, 0, 0, 0);
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-}
-
-@keyframes bg_black {
-  0% {
-    background-color: rgba(0, 0, 0, 0);
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -936,25 +903,13 @@ header {
 .contact {
   background-color: #fff;
   text-align: center;
-}
-
-@media (max-width: 2000px) {
-  .contact {
-    width: 100%;
-    height: 80vh;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact {
-    width: 100%;
-    height: 60vh;
-  }
+  width: 100%;
+  height: 80vh;
 }
 
 .contact .text {
-  width: 80%;
-  height: 20%;
+  width: 90%;
+  height: 30%;
   margin: 5% auto;
 }
 

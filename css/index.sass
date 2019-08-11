@@ -45,10 +45,7 @@ h1
         font-size: 40px
 h2
     margin: 10px auto
-    @include pc
-        font-size: 30px
-    @include sp
-        font-size: 20px
+    font-size: 30px
 p
     font-family: 'Noto Sans JP','Oswald', sans-serif
     @include pc
@@ -99,6 +96,7 @@ header
     .header-menu
         @include box(100%,60px)
         position: fixed
+        background-color: rgba(0,0,0,0.4)
         top: -60px
         z-index: 4
         ul
@@ -313,7 +311,7 @@ header
             @include box(100%,33%)
             margin: 0 auto
             border: 1px solid #fff
-        &:before
+        &::before
             content: ' '
             position: absolute
             top: 0
@@ -321,35 +319,32 @@ header
             bottom: 0
             left: 0
             background-color: rgba(0,0,0,0.4)
-    .moving-border
-        @include box(85%,80%)
-        position: relative
-        overflow: hidden
-        @include pc
-            margin: 15% auto
-        @include sp
-            margin: 8% auto
-        .container
-            @include box(100%,100%)
-            .content-title
-                z-index: 100
-                color: white
-                @include pc
-                    @include box(100%,30%)
-                    padding: 5% 0
-                @include sp
-                    @include box(100%,30%)
-                    padding: 5% 0
-            .content-txt
-                z-index: 100
-                @include pc
-                    @include box(100%,70%)
-                    // background-color: orange
-                @include sp
-                    @include box(100%,70%)
-            // .content-btn
-            //     @include box(100%,30%)
-            //     background-color: purple
+        .moving-border
+            @include box(85%,80%)
+            position: relative
+            overflow: hidden
+            @include pc
+                margin: 15% auto
+            @include sp
+                margin: 8% auto
+            .container
+                @include box(100%,100%)
+                .content-title
+                    z-index: 100
+                    color: white
+                    @include pc
+                        @include box(100%,30%)
+                        padding: 5% 0
+                    @include sp
+                        @include box(100%,30%)
+                        padding: 5% 0
+                .content-txt
+                    z-index: 100
+                    @include pc
+                        @include box(100%,70%)
+                    @include sp
+                        @include box(100%,70%)
+                
 
 // ボーダーの指定
 .moving-border
@@ -390,31 +385,29 @@ header
     @include pc
     &:hover
         &:before
-            animation: leftAnim .5s linear 0s forwards
+            animation: leftAnim .4s linear 0s forwards
         &:after
-            animation: topAnim .5s linear 0s forwards
+            animation: topAnim .4s linear 0s forwards
     .container
         &:hover,.sphover
             &:before
-                animation: bottomAnim .5s linear 0s forwards
+                animation: bottomAnim .4s linear 0s forwards
             &:after
-                animation: rightAnim .5s linear 0s forwards
+                animation: rightAnim .4s linear 0s forwards
 
 // ホバーしたときのアニメーションsp
 .sphover
     @include sp
     &:before
-            animation: leftAnim .4s linear 0s forwards
+            animation: leftAnim .3s linear 0s forwards
     &:after
-            animation: topAnim .4s linear 0s forwards
+            animation: topAnim .3s linear 0s forwards
     .container
         &:before
-            animation: bottomAnim .4s linear 0s forwards
+            animation: bottomAnim .3s linear 0s forwards
         &:after
-            animation: rightAnim .4s linear 0s forwards
-    .content
-        &:before
-            animation: bg_black .4s linear 0s forwards
+            animation: rightAnim .3s linear 0s forwards
+
 
 /* 各アニメーション */
 @include keyframes(topAnim)
@@ -440,14 +433,6 @@ header
         right: -100%
     100%
         right: 0%
-
-@include keyframes(bg_black)
-    0%
-        background-color: rgba(0,0,0,0)
-    100%
-        background-color: rgba(0,0,0,0.5)
-
-
 
 #s1
     background-image: url("../img/homepage.jpg")
@@ -529,12 +514,9 @@ header
 .contact
     background-color: #fff
     text-align: center
-    @include pc
-        @include box(100%,80vh)
-    @include sp
-        @include box(100%,60vh)
+    @include box(100%,80vh)
     .text
-        @include box(80%,20%)
+        @include box(90%,30%)
         margin: 5% auto
     .btn
         @include box(100%,20%)

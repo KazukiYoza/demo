@@ -40,21 +40,43 @@ function line(){
 line();
 
 // ボーダーの線が動く
-$(window).on('scroll', function (){
-      var moveOffset = $('.moving-border').offset().top;
-      var scrollPos = $(window).scrollTop();
-      var wh = $(window).height();
+// $(window).on('scroll', function (){
+//       var moveOffset = $('.moving-border').offset().top;
+//       var scrollPos = $(window).scrollTop();
+//       var wh = $(window).height();
   
-      if(scrollPos > moveOffset - wh + (wh / 2) ){
-        $('.moving-border').addClass('sphover');
-        $('.moving-border .container').addClass('sphover');
-        console.log("clear")
-      }else{
-        $('.moving-border').removeClass('sphover');
-        $('.moving-border .container').removeClass('sphover');
-        console.log("clear2")
-        }
-});  
+//       if(scrollPos > moveOffset - wh + (wh / 2) ){
+//         $('.moving-border').addClass('sphover');
+//         $('.moving-border .container').addClass('sphover');
+//         console.log("clear")
+//       }else{
+//         $('.moving-border').removeClass('sphover');
+//         $('.moving-border .container').removeClass('sphover');
+//         console.log("clear2")
+//         }
+// });  
+
+$(function(){
+    $(window).on('scroll', function (){
+        $('.moving-border').each(function(){
+
+        var moveOffset = $(this).offset().top;
+        var scrollPos = $(window).scrollTop();
+        var wh = $(window).height();
+        if(scrollPos > moveOffset - wh + (wh / 2) ){
+          $(this).addClass('sphover');
+          $(this).parent().addClass('is-show');
+          $(this).children().addClass('sphover');
+          console.log("clear")
+        }else{
+          $(this).removeClass('sphover');
+          $(this).parent().removeClass('is-show');
+          $(this).children().removeClass('sphover');
+          console.log("clear2")
+          }
+    });
+  });  
+});
 
 
 // フェードイン
