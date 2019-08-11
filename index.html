@@ -11,8 +11,12 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis|Oswald|Noto+Sans+JP&display=swap" rel="stylesheet">
     <!-- fontawesome -->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!-- モーダルプラグイン用css -->
+    <link rel="stylesheet" href="./css/modaal.min.css">
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="./js/modaal.min.js"></script>
     <title>porifolio</title>
 </head>
 <body>
@@ -154,11 +158,11 @@
                 </div>
             </div>
 
-            <div class="content">
+            <div class="content" id="s3">
                 <div class="moving-border">
                     <div class="container">
                         <div class="content-title"></div>
-                        <div class="content-txt"></div>
+                        <div class="content-txt"><p style="font-size: 30px">Coming Soon</p></div>
                         <div class="content-btn"></div>
                     </div>
                 </div>
@@ -169,27 +173,17 @@
             <p>制作</p>
         </div>
         <section class="works">
-            <div class="flex-container effect-fade">
-                <div class="image">
-                    <a href="https://gifters-20190629.herokuapp.com/"><img src="./img/gifters.jpg" alt=""></a>
-                </div>
-                <div class="text">
-                    <h1 style="font-family: Oswald;">Gifters</h1>
-                    <p style="font-size: 12px;">Design/HTML,CSS/JavaScript,jQuery/Python/SQL<br></p>
-                    <p>プレゼント選びを代行するマッチングサイトです。
-                        <br>（画像をクリックするとページに飛びます）</p>
-                </div>
+            <div class="works-contents effect-fade">
+                <a href="#modal1" class="modal"><img src="./img/gifters.jpg" alt=""></a>
             </div>
-            <div class="flex-container effect-fade">
-                <div class="image">
-                    <a href="https://kazukiyoza.github.io/treasure-dungeon/index.html"><img src="./img/dungeon.JPG" alt=""></a>
-                </div>
-                <div class="text">
-                    <h1 style="font-family: Oswald;">Treasure Dungeon</h1>
-                    <p style="font-size: 12px;">Design/Illustrator/HTML,CSS/JavaScript,jQuery</p>
-                    <p>WEBページで楽しめる謎解きゲームを制作しました。
-                        <br>（画像をクリックするとページに飛びます）</p>
-                </div>
+            <div class="works-contents effect-fade">
+                <a href="#modal2" class="modal"><img src="./img/dungeon.JPG" alt=""></a>
+            </div>
+            <div class="works-contents effect-fade">
+                <a href="#modal3" class="modal"><img src="./img/nishihara.jpg" alt=""></a>
+            </div>
+            <div class="works-contents effect-fade">
+                <a href="#modal4" class="modal"><img src="./img/sakayanotonari.jpg" alt=""></a>
             </div>
         </section>
 
@@ -208,6 +202,63 @@
             </div>
         </section>
     </main>
+
+<!-- モーダル画面 -->
+    <div id="modal1" style="display:none;">
+        <div class="flex-container">
+            <div class="image">
+                <a href="https://gifters-20190629.herokuapp.com/"><img src="./img/gifters.jpg" alt=""></a>
+            </div>
+            <div class="text">
+                <h1>Gifters</h1>
+                <h2>Design/HTML,CSS/JavaScript,jQuery/Python/SQL<br></h2>
+                <p>プレゼント選びを代行するマッチングサイトです。
+                    <br>（画像をクリックするとページに飛びます）</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" style="display:none;">
+        <div class="flex-container">
+            <div class="image">
+                <a href="https://kazukiyoza.github.io/treasure-dungeon/index.html"><img src="./img/dungeon.JPG" alt=""></a>
+            </div>
+            <div class="text">
+                <h1>Treasure Dungeon</h1>
+                <h2>Design/Illustrator/HTML,CSS/JavaScript,jQuery</h2>
+                <p>WEBページで楽しめる謎解きゲームを制作しました。
+                    <br>（画像をクリックするとページに飛びます）</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" style="display:none;">
+        <div class="flex-container">
+            <div class="image">
+                <a href="http://feeljapan.net/okinawa/article/2019-07-06-7430/"><img src="./img/nishihara.jpg" alt=""></a>
+            </div>
+            <div class="text">
+                <h1>Feel OKINAWA</h1>
+                <h2>Writing</h2>
+                <p>自分の地元の沖縄県西原町のおすすめスポットを紹介する記事を執筆しました。
+                    <br>（画像をクリックするとページに飛びます）</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal4" style="display:none;">
+        <div class="flex-container">
+            <div class="image">
+                <a href="https://magazine.habit156.com/4729"><img src="./img/sakayanotonari.jpg" alt=""></a>
+            </div>
+            <div class="text">
+                <h1>habit magazine</h1>
+                <h2>Writing</h2>
+                <p>自分の地元の沖縄県西原町のおすすめスポットを紹介する記事を執筆しました。
+                    <br>（画像をクリックするとページに飛びます）</p>
+            </div>
+        </div>
+    </div>
     <footer>
 
     </footer>

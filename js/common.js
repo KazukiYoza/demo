@@ -41,9 +41,6 @@ line();
 
 // ボーダーの線が動く
 $(window).on('scroll', function (){
-    // var move = $('.moving-border');
-    // move.each(function () {
-    
       var moveOffset = $('.moving-border').offset().top;
       var scrollPos = $(window).scrollTop();
       var wh = $(window).height();
@@ -57,8 +54,7 @@ $(window).on('scroll', function (){
         $('.moving-border .container').removeClass('sphover');
         console.log("clear2")
         }
-    });  
-
+});  
 
 
 // フェードイン
@@ -78,4 +74,15 @@ $(function(){
 // ハンバーガーメニュー
 $(function() {
     $('.drawer').drawer();
+});
+
+// モーダル
+$('.modal').modaal({
+    type: 'inline',	// コンテンツのタイプを指定
+    animation_speed: '500', 	// アニメーションのスピードをミリ秒単位で指定
+	background: '#000000',	// 背景の色を白に変更
+	overlay_opacity: '0.7',	// 背景のオーバーレイの透明度を変更
+	fullscreen: 'true',	// フルスクリーンモードにする
+	background_scroll: 'true',	// 背景をスクロールさせるか否か
+	loading_content: 'Now Loading, Please Wait.'	// 読み込み時のテキスト表示
 });

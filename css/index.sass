@@ -42,10 +42,7 @@ h1,h2,
     text-align: center
 
 h1
-    @include pc
         font-size: 40px
-    @include sp
-        font-size: 30px
 h2
     margin: 10px auto
     @include pc
@@ -300,7 +297,7 @@ header
 
 .service
     display: flex
-    background-color: red
+    // background-color: red
     @include pc
         @include box(100%,90vh)
         flex-direction: row
@@ -308,6 +305,7 @@ header
         @include box(100%,110vh)
         flex-direction: column
     .content
+        position: relative
         @include pc
             @include box(33.3%,100%)
             border: 1px solid #fff
@@ -315,6 +313,14 @@ header
             @include box(100%,33%)
             margin: 0 auto
             border: 1px solid #fff
+        &:before
+            content: ' '
+            background-color: rgba(0,0,0,.5)
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
     .moving-border
         @include box(85%,80%)
         position: relative
@@ -326,14 +332,17 @@ header
         .container
             @include box(100%,100%)
             .content-title
+                color: white
                 @include pc
                     @include box(100%,30%)
+                    padding: 5% 0
                 @include sp
                     @include box(100%,30%)
+                    padding: 5% 0
             .content-txt
                 @include pc
                     @include box(100%,70%)
-                    background-color: orange
+                    // background-color: orange
                 @include sp
                     @include box(100%,70%)
             // .content-btn
@@ -347,31 +356,31 @@ header
         position: absolute
         background: #fff
         z-index: 100
-    &:before //上の線　左から右へ
+    &:before //上の線 左から右へ
         top: 0
         left: -100%
         width: 100%
-        height: 2px
-    &:after //左の線　上から下へ
+        height: 5px
+    &:after //左の線 上から下へ
         top: -100%
         left: 0
-        width: 2px
+        width: 5px
         height: 100%  
     .container
         &:before,&:after
             content: ''
             position: absolute
             background: #fff
-        &:before //右の線　下から上へ
+        &:before //右の線 下から上へ
             bottom: -100%
             right: 0
-            width: 2px
+            width: 5px
             height: 100%
-        &:after //下の線　右から左へ
+        &:after //下の線 右から左へ
             bottom: 0
             right: -100%
             width: 100%
-            height: 2px
+            height: 5px
         
 // ホバーしたときのアニメーションPC
 .moving-border
@@ -400,16 +409,8 @@ header
             animation: bottomAnim .5s linear 0s forwards
         &:after
             animation: rightAnim .5s linear 0s forwards
+    
 
-.sp-overlay
-  content: ""
-  position: absolute
-  top: 0
-  left: 0
-  height: 100%
-  width: 100%
-  z-index: 6
-  background: rgba(0, 0, 0, 0.6)
 
 /* 各アニメーション */
 @include keyframes(topAnim)
@@ -439,44 +440,72 @@ header
 
 #s1
     background-image: url("../img/homepage.jpg")
+    background-size: cover
 #s2
     background-image: url("../img/writing.jpg")
+    background-size: cover
+#s3
+    background-color: #f3f3f3
 
 .works
     background-color: #f3f3f3
+    display: flex
     @include pc
-        @include box(100%,150vh)
+        @include box(100%,80vh)
+        flex-direction: row
+        flex-wrap: wrap
     @include sp
-        @include box(100%,130vh)
-    .flex-container
-        @include box(90%,45%)
-        margin: 5% auto 5% auto
-        display: flex
-        box-shadow: 1px 2px 0px 3px rgba(240,240,240,0.5)
+        @include box(100%,80vh)
+        flex-direction: row
+        flex-wrap: wrap
+    .works-contents 
         @include pc
-            flex-direction: row
+            @include box(25%,100%)
+            padding: 3%
         @include sp
-            flex-direction: column-reverse
-        .image
+            @include box(50%,50%)
+            padding: 2.5%
             img
+                height: auto
                 width: 100%
-                height: 100%
+
+
+.flex-container
+    @include box(95%,45%)
+    margin: 5% auto 5% auto
+    display: flex
+    box-shadow: 1px 2px 0px 3px rgba(240,240,240,0.5)
+    @include pc
+        flex-direction: row
+    @include sp
+        flex-direction: column-reverse
+    .image
+        img
+            width: 100%
+            height: 100%
+        @include pc
+            @include box(50%,100%)
+        @include sp
+            @include box(100%,60%)
+    .text
+        background-color: #fff
+        text-align: center
+        @include pc
+            @include box(50%,100%)
+            padding: 10% 5%
+        @include sp
+            @include box(100%,40%)
+            font-size: 15px
+            padding: 5%
+        h1,h2
+            font-family: Oswald
+        h2
             @include pc
-                @include box(50%,100%)
+                font-size: 20px
             @include sp
-                @include box(100%,60%)
-        .text
-            background-color: #fff
-            text-align: center
-            @include pc
-                @include box(50%,100%)
-                padding: 10% 5%
-            @include sp
-                @include box(100%,40%)
-                font-size: 15px
-                padding: 5%
-            p
-                word-wrap: break-word
+                font-size: 12px
+        p
+            word-wrap: break-word
 
 
 .contact

@@ -8,16 +8,8 @@ h1, h2 {
   text-align: center;
 }
 
-@media (max-width: 2000px) {
-  h1 {
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 30px;
-  }
+h1 {
+  font-size: 40px;
 }
 
 h2 {
@@ -472,7 +464,6 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: red;
 }
 
 @media (max-width: 2000px) {
@@ -497,6 +488,10 @@ header {
   }
 }
 
+.service .content {
+  position: relative;
+}
+
 @media (max-width: 2000px) {
   .service .content {
     width: 33.3%;
@@ -512,6 +507,16 @@ header {
     margin: 0 auto;
     border: 1px solid #fff;
   }
+}
+
+.service .content:before {
+  content: ' ';
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .service .moving-border {
@@ -538,10 +543,15 @@ header {
   height: 100%;
 }
 
+.service .moving-border .container .content-title {
+  color: white;
+}
+
 @media (max-width: 2000px) {
   .service .moving-border .container .content-title {
     width: 100%;
     height: 30%;
+    padding: 5% 0;
   }
 }
 
@@ -549,6 +559,7 @@ header {
   .service .moving-border .container .content-title {
     width: 100%;
     height: 30%;
+    padding: 5% 0;
   }
 }
 
@@ -556,7 +567,6 @@ header {
   .service .moving-border .container .content-txt {
     width: 100%;
     height: 70%;
-    background-color: orange;
   }
 }
 
@@ -578,13 +588,13 @@ header {
   top: 0;
   left: -100%;
   width: 100%;
-  height: 2px;
+  height: 5px;
 }
 
 .moving-border:after {
   top: -100%;
   left: 0;
-  width: 2px;
+  width: 5px;
   height: 100%;
 }
 
@@ -597,7 +607,7 @@ header {
 .moving-border .container:before {
   bottom: -100%;
   right: 0;
-  width: 2px;
+  width: 5px;
   height: 100%;
 }
 
@@ -605,7 +615,7 @@ header {
   bottom: 0;
   right: -100%;
   width: 100%;
-  height: 2px;
+  height: 5px;
 }
 
 .moving-border:hover:before {
@@ -722,32 +732,73 @@ header {
 
 #s1 {
   background-image: url("../img/homepage.jpg");
+  background-size: cover;
 }
 
 #s2 {
   background-image: url("../img/writing.jpg");
+  background-size: cover;
+}
+
+#s3 {
+  background-color: #f3f3f3;
 }
 
 .works {
   background-color: #f3f3f3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media (max-width: 2000px) {
   .works {
     width: 100%;
-    height: 150vh;
+    height: 80vh;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
 @media (max-width: 480px) {
   .works {
     width: 100%;
-    height: 130vh;
+    height: 80vh;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
-.works .flex-container {
-  width: 90%;
+@media (max-width: 2000px) {
+  .works .works-contents {
+    width: 25%;
+    height: 100%;
+    padding: 3%;
+  }
+}
+
+@media (max-width: 480px) {
+  .works .works-contents {
+    width: 50%;
+    height: 50%;
+    padding: 2.5%;
+  }
+  .works .works-contents img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.flex-container {
+  width: 95%;
   height: 45%;
   margin: 5% auto 5% auto;
   display: -webkit-box;
@@ -758,7 +809,7 @@ header {
 }
 
 @media (max-width: 2000px) {
-  .works .flex-container {
+  .flex-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -767,7 +818,7 @@ header {
 }
 
 @media (max-width: 480px) {
-  .works .flex-container {
+  .flex-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -775,32 +826,32 @@ header {
   }
 }
 
-.works .flex-container .image img {
+.flex-container .image img {
   width: 100%;
   height: 100%;
 }
 
 @media (max-width: 2000px) {
-  .works .flex-container .image {
+  .flex-container .image {
     width: 50%;
     height: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  .works .flex-container .image {
+  .flex-container .image {
     width: 100%;
     height: 60%;
   }
 }
 
-.works .flex-container .text {
+.flex-container .text {
   background-color: #fff;
   text-align: center;
 }
 
 @media (max-width: 2000px) {
-  .works .flex-container .text {
+  .flex-container .text {
     width: 50%;
     height: 100%;
     padding: 10% 5%;
@@ -808,7 +859,7 @@ header {
 }
 
 @media (max-width: 480px) {
-  .works .flex-container .text {
+  .flex-container .text {
     width: 100%;
     height: 40%;
     font-size: 15px;
@@ -816,7 +867,23 @@ header {
   }
 }
 
-.works .flex-container .text p {
+.flex-container .text h1, .flex-container .text h2 {
+  font-family: Oswald;
+}
+
+@media (max-width: 2000px) {
+  .flex-container .text h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flex-container .text h2 {
+    font-size: 12px;
+  }
+}
+
+.flex-container .text p {
   word-wrap: break-word;
 }
 
