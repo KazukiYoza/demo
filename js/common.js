@@ -88,11 +88,32 @@ $(function(){
             var windowHeight = $(window).height();
             if (scroll > elemPos - windowHeight){
                 $(this).addClass('effect-scroll');
+            }else{
+                $(this).removeClass('effect-scroll');
             }
         });
      });
 });
     
+// ヘッダーメニューの表示
+$(function(){
+    $(window).scroll(function (){
+        $('.header-menu').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            console.log("offset" + elemPos);
+            console.log("scroll" + scroll);
+            console.log("windowheight" + windowHeight);
+            if (windowHeight > elemPos){
+                $(this).css('background-color','rgba(0,0,0,0)');
+            }else{
+                $(this).css('background-color','rgba(0,0,0,0.4)');
+            }
+        });
+     });
+});
+
 // ハンバーガーメニュー
 $(function() {
     $('.drawer').drawer();
@@ -108,3 +129,32 @@ $('.modal').modaal({
 	background_scroll: 'true',	// 背景をスクロールさせるか否か
 	loading_content: 'Now Loading, Please Wait.'	// 読み込み時のテキスト表示
 });
+// Blockreveal
+(function() {
+    setTimeout(init, 10);
+        function init() {
+            var scrollElemToWatch_1 = document.getElementById('effect_01'),
+                    watcher_1 = scrollMonitor.create(scrollElemToWatch_1, -10),				
+                    rev1 = new RevealFx(scrollElemToWatch_1, {
+                        revealSettings : {
+                            bgcolor: '#182524',
+                            duration: 500,
+                            onStart: function(contentEl, revealerEl) { 
+                                anime.remove(contentEl);
+                                contentEl.style.opacity = 0; 
+                            },
+                            onCover: function(contentEl, revealerEl) { 
+                                contentEl.style.opacity = 1;
+                                anime({
+                                    targets: contentEl,
+                                    easing: 'easeOutExpo'
+                                });
+                            }
+                        }
+                    })
+            watcher_1.enterViewport(function() {
+                rev1.reveal();
+                watcher_1.destroy();
+            });
+        }
+    })();
