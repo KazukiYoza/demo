@@ -183,11 +183,11 @@ header {
   }
   .header-container .header-title h1 {
     font-family: 'Oswald';
-    font-size: 50px;
+    font-size: 60px;
     text-align: left;
   }
   .header-container .header-title p {
-    font-size: 17px;
+    font-size: 20px;
   }
 }
 
