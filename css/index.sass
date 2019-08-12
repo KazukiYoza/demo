@@ -49,9 +49,9 @@ h2
 p
     font-family: 'Noto Sans JP','Oswald', sans-serif
     @include pc
-        font-size: 20px
+        font-size: 17px
     @include sp
-        font-size: 15px
+        font-size: 14px
 li
     font-family: 'Oswald', sans-serif
     font-weight: medium
@@ -171,9 +171,9 @@ header
     margin-top: 30px
     position: relative
     @include pc
-        @include box(100%,100vh)
+        @include box(100%,120vh)
     @include sp
-        @include box(100%,70vh)
+        @include box(100%,100vh)
     .about-container
         margin: 0 auto
         position: absolute
@@ -188,7 +188,8 @@ header
             @include sp
                 @include box(100%,20%)        
         .txt
-            @include box(70%,80%)
+            text-align: left
+            @include box(80%,80%)
             margin: 0 auto
                         
 .area
@@ -198,9 +199,9 @@ header
     z-index: -1
     width: 100%
     @include pc
-        height: 100vh
+        height: 120vh
     @include sp
-        height: 70vh
+        height: 100vh
     .circles
         position: absolute
         top: 0
@@ -332,18 +333,23 @@ header
                 .content-title
                     z-index: 100
                     color: white
+                    padding: 5% 0
                     @include pc
-                        @include box(100%,30%)
-                        padding: 5% 0
+                        @include box(100%,35%)
+                        // padding: 5% 0
                     @include sp
-                        @include box(100%,30%)
-                        padding: 5% 0
+                        @include box(100%,25%)
+                        // padding: 5% 0
                 .content-txt
                     z-index: 100
+                    color: white
+                    margin: 5%
+                    text-align: left
                     @include pc
-                        @include box(100%,70%)
+                        @include box(90%,55%)
+                        font-size: 14px
                     @include sp
-                        @include box(100%,70%)
+                        @include box(90%,65%)
                 
 
 // ボーダーの指定
@@ -438,11 +444,12 @@ header
     background-image: url("../img/homepage.jpg")
     background-size: cover
 #s2
+    background-image: url("../img/wordpress.png")
+    background-size: cover
+    background-position: center
+#s3
     background-image: url("../img/writing.jpg")
     background-size: cover
-#s3
-    background-color: #f3f3f3
-
 .works
     background-color: #f3f3f3
     display: flex

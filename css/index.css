@@ -23,13 +23,13 @@ p {
 
 @media (max-width: 2000px) {
   p {
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 
 @media (max-width: 480px) {
   p {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 
@@ -224,14 +224,14 @@ header {
 @media (max-width: 2000px) {
   .about {
     width: 100%;
-    height: 100vh;
+    height: 120vh;
   }
 }
 
 @media (max-width: 480px) {
   .about {
     width: 100%;
-    height: 70vh;
+    height: 100vh;
   }
 }
 
@@ -273,7 +273,8 @@ header {
 }
 
 .about .about-container .txt {
-  width: 70%;
+  text-align: left;
+  width: 80%;
   height: 80%;
   margin: 0 auto;
 }
@@ -288,13 +289,13 @@ header {
 
 @media (max-width: 2000px) {
   .area {
-    height: 100vh;
+    height: 120vh;
   }
 }
 
 @media (max-width: 480px) {
   .area {
-    height: 70vh;
+    height: 100vh;
   }
 }
 
@@ -536,39 +537,42 @@ header {
 .service .content .moving-border .container .content-title {
   z-index: 100;
   color: white;
+  padding: 5% 0;
 }
 
 @media (max-width: 2000px) {
   .service .content .moving-border .container .content-title {
     width: 100%;
-    height: 30%;
-    padding: 5% 0;
+    height: 35%;
   }
 }
 
 @media (max-width: 480px) {
   .service .content .moving-border .container .content-title {
     width: 100%;
-    height: 30%;
-    padding: 5% 0;
+    height: 25%;
   }
 }
 
 .service .content .moving-border .container .content-txt {
   z-index: 100;
+  color: white;
+  margin: 5%;
+  text-align: left;
 }
 
 @media (max-width: 2000px) {
   .service .content .moving-border .container .content-txt {
-    width: 100%;
-    height: 70%;
+    width: 90%;
+    height: 55%;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
   .service .content .moving-border .container .content-txt {
-    width: 100%;
-    height: 70%;
+    width: 90%;
+    height: 65%;
   }
 }
 
@@ -732,12 +736,14 @@ header {
 }
 
 #s2 {
-  background-image: url("../img/writing.jpg");
+  background-image: url("../img/wordpress.png");
   background-size: cover;
+  background-position: center;
 }
 
 #s3 {
-  background-color: #f3f3f3;
+  background-image: url("../img/writing.jpg");
+  background-size: cover;
 }
 
 .works {

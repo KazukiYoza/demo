@@ -67,12 +67,10 @@ $(function(){
           $(this).addClass('sphover');
           $(this).parent().addClass('is-show');
           $(this).children().addClass('sphover');
-          console.log("clear")
         }else{
           $(this).removeClass('sphover');
           $(this).parent().removeClass('is-show');
           $(this).children().removeClass('sphover');
-          console.log("clear2")
           }
     });
   });  
@@ -102,13 +100,11 @@ $(function(){
             var elemPos = $(this).offset().top;
             var scroll = $(window).scrollTop();
             var windowHeight = $(window).height();
-            console.log("offset" + elemPos);
-            console.log("scroll" + scroll);
-            console.log("windowheight" + windowHeight);
+
             if (windowHeight > elemPos){
-                $(this).css('background-color','rgba(0,0,0,0)');
+                $('.header-menu').css({'background-color': 'rgba(0,0,0,0)'},{'transition-duration' : '1s'});
             }else{
-                $(this).css('background-color','rgba(0,0,0,0.4)');
+                $('.header-menu').css({'background-color': 'rgba(0,0,0,0.5)'},{'transition-duration' : '1s'});
             }
         });
      });
