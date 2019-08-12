@@ -525,12 +525,15 @@ header
 .contact
     background-color: #fff
     text-align: center
-    @include box(100%,80vh)
+    @include pc
+        @onclude box(100%,110vh)
+    @include sp
+        @include box(100%,80vh)
     .text
         @include box(90%,30%)
         margin: 5% auto
     .btn
-        @include box(100%,20%)
+        @include box(100%,30%)
         .mailbtn
             display: block
             margin: 0 auto
@@ -558,3 +561,15 @@ header
   background: #000
   pointer-events: none
   opacity: 0
+
+footer
+    background-color: #3E5E62
+    @include pc
+        @include box(100%,13vh)
+    @include sp
+        @include box(100%,7vh)
+    p
+        display: block
+        text-align: right
+        margin: 10% 0 0 0
+        color: white
