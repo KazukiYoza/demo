@@ -171,9 +171,11 @@ header {
     font-family: 'Oswald';
     font-size: 70px;
     text-align: left;
+    text-shadow: -1px -2px 3px #808080;
   }
   .header-container .header-title p {
     font-size: 30px;
+    text-shadow: -1px -2px 3px #808080;
   }
 }
 
@@ -185,9 +187,11 @@ header {
     font-family: 'Oswald';
     font-size: 55px;
     text-align: left;
+    text-shadow: -1px -2px 3px #808080;
   }
   .header-container .header-title p {
     font-size: 20px;
+    text-shadow: -1px -2px 3px #808080;
   }
 }
 
