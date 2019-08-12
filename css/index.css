@@ -187,7 +187,7 @@ header {
     text-align: left;
   }
   .header-container .header-title p {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 
@@ -235,7 +235,7 @@ header {
 @media (max-width: 480px) {
   .about {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
   }
 }
 
@@ -299,7 +299,7 @@ header {
 
 @media (max-width: 480px) {
   .area {
-    height: 100vh;
+    height: 90vh;
   }
 }
 
